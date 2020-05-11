@@ -1,20 +1,82 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      First app
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <h1><ion-icon name="logo-apple"></ion-icon> Hello</h1>
+  <div>
+    <button>bouton html</button>
   </div>
+  <div>
+    <ion-button color="warning" expand="full" size="large">
+      <ion-icon name="star"></ion-icon>
+      bouton ionic
+    </ion-button>
+  </div>
+
+  <ion-button>
+    <ion-icon name="person"></ion-icon>
+  </ion-button>
+  <ion-button>
+    <ion-icon name="person" slot="icon-only"></ion-icon>
+  </ion-button>
+
+  <ion-list>
+    <ion-list-header>Les fruits</ion-list-header>
+    <ion-item>
+      Pommes
+      <ion-icon name="logo-apple" slot="start"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="/assets/shapes.svg"></ion-img>
+      </ion-thumbnail>
+
+      Poires
+    </ion-item>
+    <ion-item>
+      <ion-label>Oranges</ion-label>
+      <ion-note color="warning" slot="start">super bon</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label color="success">
+        <h3>Tycho Brahé</h3>
+        <p>Un astronome</p>
+      </ion-label>
+      <ion-icon name="star" slot="end"></ion-icon>
+      <ion-button slot="end">Go</ion-button>
+    </ion-item>
+
+    <ion-item-group>
+      <ion-item-divider>A</ion-item-divider>
+      <ion-item-sliding>
+        <ion-item>abricots</ion-item>
+        <ion-item-options side="end">
+          <ion-item-option>
+            <ion-button>go</ion-button>
+          </ion-item-option>
+          <ion-item-option color="danger">
+            <ion-label>Une info</ion-label>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-item>ananas</ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>B</ion-item-divider>
+      <ion-item>bananes</ion-item>
+      <ion-item>brugnons</ion-item>
+    </ion-item-group>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <h3>Mon appli</h3>
+  </ion-toolbar>
+</ion-footer>
