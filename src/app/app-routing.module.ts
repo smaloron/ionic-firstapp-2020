@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "form",
+    redirectTo: "animals",
     pathMatch: "full",
   },
   {
@@ -23,6 +23,16 @@ const routes: Routes = [
     path: "form",
     loadChildren: () =>
       import("./pages/form/form.module").then((m) => m.FormPageModule),
+  },
+  {
+    path: "imc",
+    loadChildren: () =>
+      import("./pages/imc/imc.module").then((m) => m.ImcPageModule),
+  },
+  {
+    path: "animals",
+    loadChildren: () =>
+      import("./pages/animals/animals.module").then((m) => m.AnimalsPageModule),
   },
 ];
 

@@ -2,6 +2,15 @@
   font-size: var(--bigText);
 }
 
+ion-content {
+  --background: url(../../../assets/fond.jpg) no-repeat center/cover fixed;
+}
+
+ion-list {
+  --ion-background-color: rgba(255, 255, 255, 0.2);
+}
+
 ion-item {
-  --background: #55ccff;
+  --ion-background-color: transparent !important;
+  --background: transparent !important;
 }

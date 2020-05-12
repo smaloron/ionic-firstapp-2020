@@ -5,11 +5,33 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <p class="important-text">Quelques contrôles de formulaires</p>
+  <ion-button [color]="buttonColor" expand="block" (click)="toggleForm()">
+    Valider
+  </ion-button>
+
+  <h1>{{ name }} aime les {{ fruits[0] }}</h1>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Saisir un fruit" [(ngModel)]="newFruit">
+    </ion-input>
+    <ion-button slot="end" (click)="addFruit()">Valider</ion-button>
+  </ion-item>
+
   <ion-list>
+    <ion-item *ngFor="let item of fruits">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+
+  <p class="important-text" [hidden]="! visible">
+    vous êtes {{ user.role }} monsieur {{ user.name }}
+    <br />
+    un et un font {{ 1 + 1 }}
+  </p>
+  <ion-list *ngIf="visible">
     <ion-item>
       <ion-label position="stacked">Nom</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Prénom</ion-label>
