@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "animals",
+    redirectTo: "todo-list",
     pathMatch: "full",
   },
   {
@@ -33,6 +33,22 @@ const routes: Routes = [
     path: "animals",
     loadChildren: () =>
       import("./pages/animals/animals.module").then((m) => m.AnimalsPageModule),
+  },
+  {
+    path: "typage",
+    loadChildren: () =>
+      import("./pages/typage/typage.module").then((m) => m.TypagePageModule),
+  },
+  {
+    path: "todo-list",
+    loadChildren: () =>
+      import("./pages/todo-list/todo-list.module").then(
+        (m) => m.TodoListPageModule
+      ),
+  },
+  {
+    path: 'todo-form',
+    loadChildren: () => import('./pages/todo-form/todo-form.module').then( m => m.TodoFormPageModule)
   },
 ];
 

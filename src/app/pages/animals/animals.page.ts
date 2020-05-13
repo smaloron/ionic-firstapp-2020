@@ -77,6 +77,8 @@ export class AnimalsPage implements OnInit {
 
   public media: HTMLAudioElement;
 
+  public reorderDisabled = true;
+
   constructor(private toastCtrl: ToastController) {}
 
   ngOnInit() {}
@@ -98,6 +100,14 @@ export class AnimalsPage implements OnInit {
     this.media = new Audio("/assets" + animal.file);
     this.media.load();
     this.media.play();
+    animal.playing = true;
+
+    //Masquage de la note de musique à la fin du son
+    this.media.ontimeupdate = (even) => {
+      if (this.media.ended) {
+        animal.playing = false;
+      }
+    };
   }
 
   guessAnimal(animalPos) {

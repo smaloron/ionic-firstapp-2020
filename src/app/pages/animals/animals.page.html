@@ -1,13 +1,22 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>animals</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="reorderDisabled = ! reorderDisabled">
+        <ion-icon
+          name="reorder-three"
+          slot="icon-only"
+          [color]="reorderDisabled?'success':'danger'"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
     <ion-reorder-group
-      disabled="false"
+      [disabled]="reorderDisabled"
       (ionItemReorder)="reorderAnimal($event)"
     >
       <ion-item-sliding *ngFor="let item of animals; let pos = index">
@@ -20,6 +29,11 @@
             <ion-img [src]="'/assets/'+ item.image"></ion-img>
           </ion-avatar>
           <ion-reorder slot="end"></ion-reorder>
+          <ion-icon
+            name="musical-note"
+            slot="end"
+            *ngIf="item.playing"
+          ></ion-icon>
         </ion-item>
 
         <ion-item-options side="end">
