@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "todo-list",
+    redirectTo: "memory-game",
     pathMatch: "full",
   },
   {
@@ -47,8 +47,18 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'todo-form',
-    loadChildren: () => import('./pages/todo-form/todo-form.module').then( m => m.TodoFormPageModule)
+    path: "todo-form",
+    loadChildren: () =>
+      import("./pages/todo-form/todo-form.module").then(
+        (m) => m.TodoFormPageModule
+      ),
+  },
+  {
+    path: "memory-game",
+    loadChildren: () =>
+      import("./pages/memory-game/memory-game.module").then(
+        (m) => m.MemoryGamePageModule
+      ),
   },
 ];
 

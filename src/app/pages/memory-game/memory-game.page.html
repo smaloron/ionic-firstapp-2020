@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>memory-game</ion-title>
+    <ion-chip slot="end" color="danger">
+      {{score}}
+    </ion-chip>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        *ngFor="let card of cardDeck; let pos = index"
+        size="4"
+        (click)="cardClick(card, pos)"
+      >
+        <ion-img [src]="card.getImageURL()" class="card"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button
+      expand="block"
+      (click)="playAgain()"
+      [disabled]="score != numberOfUniqueCards"
+    >
+      Nouvelle partie
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
